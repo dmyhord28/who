@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gatunki Lisów</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(to bottom, #fff7ed, #ffe0b2);
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    /* ANIMOWANE TŁO */
+    .background{
+      position:fixed;
+      width:100%;
+      height:100%;
+      z-index:-1;
+      overflow:hidden;
+    }
+
+    .circle{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,140,0,0.15);
+      animation:float 12s infinite linear;
+    }
+
+    .circle:nth-child(1){
+      width:200px;
+      height:200px;
+      left:10%;
+      top:20%;
+    }
+
+    .circle:nth-child(2){
+      width:300px;
+      height:300px;
+      right:10%;
+      top:50%;
+      animation-duration:16s;
+    }
+
+    .circle:nth-child(3){
+      width:150px;
+      height:150px;
+      left:40%;
+      bottom:10%;
+      animation-duration:10s;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px) rotate(0deg);
+      }
+      50%{
+        transform:translateY(-30px) rotate(180deg);
+      }
+      100%{
+        transform:translateY(0px) rotate(360deg);
+      }
+    }
+
+    header{
+      background:linear-gradient(135deg, orange, #ff6f00);
+      color:white;
+      text-align:center;
+      padding:60px 20px;
+      animation:fadeDown 1s ease;
+    }
+
+    header h1{
+      font-size:55px;
+      margin-bottom:15px;
+      animation:pulse 2s infinite;
+    }
+
+    header p{
+      font-size:20px;
+      opacity:0.9;
+    }
+
+    @keyframes fadeDown{
+      from{
+        opacity:0;
+        transform:translateY(-40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.05);
+      }
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:50px auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 20px rgba(0,0,0,0.15);
+      transition:0.4s;
+      animation:fadeUp 1s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-12px) scale(1.03);
+      box-shadow:0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .card img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .card:hover img{
+      transform:scale(1.1);
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card h2{
+      color:#ff6f00;
+      margin-bottom:12px;
+      font-size:28px;
+    }
+
+    .card p{
+      line-height:1.6;
+      color:#444;
+      margin-bottom:20px;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .wiki-btn{
+      display:inline-block;
+      padding:12px 20px;
+      background:orange;
+      color:white;
+      text-decoration:none;
+      border-radius:30px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .wiki-btn:hover{
+      background:#ff6f00;
+      transform:scale(1.1);
+    }
+
+    footer{
+      margin-top:50px;
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:25px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ANIMOWANE TŁO -->
+  <div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🦊 Gatunki Lisów</h1>
+    <p>Kliknij przycisk i poznaj więcej informacji o gatunku</p>
+  </header>
+
+  <!-- KARTY -->
+  <section class="container">
+
+    <!-- LIS RUDY -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=1200&auto=format&fit=crop" alt="Lis Rudy">
+
+      <div class="card-content">
+        <h2>Lis Rudy</h2>
+
+        <p>
+          Najbardziej znany gatunek lisa.
+          Występuje w Europie, Azji i Ameryce Północnej.
+        </p>
+
+        <a 
+          class="wiki-btn"
+          href="https://pl.wikipedia.org/wiki/Lis_rudy"
+          target="_blank"
+        >
+          Wikipedia
+        </a>
+      </div>
+    </div>
+
+    <!-- LIS POLARNY -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=1200&auto=format&fit=crop" alt="Lis Polarny">
+
+      <div class="card-content">
+        <h2>Lis Polarny</h2>
+
+        <p>
+          Żyje na terenach Arktyki i posiada grube,
+          białe futro chroniące przed zimnem.
+        </p>
+
+        <a 
+          class="wiki-btn"
+          href="https://pl.wikipedia.org/wiki/Lis_polarny"
+          target="_blank"
+        >
+          Wikipedia
+        </a>
+      </div>
+    </div>
+
+    <!-- FENEK -->
+    <div class="card">
+      <img src="https://images8.alphacoders.com/433/433731.jpg" alt="Fenek">
+
+      <div class="card-content">
+        <h2>Fenek</h2>
+
+        <p>
+          Mały lis pustynny z ogromnymi uszami.
+          Zamieszkuje gorące tereny Sahary.
+        </p>
+
+        <a 
+          class="wiki-btn"
+          href="https://pl.wikipedia.org/wiki/Fenek"
+          target="_blank"
+        >
+          Wikipedia
+        </a>
+      </div>
+    </div>
+
+    <!-- LIS SZARY -->
+    <div class="card">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.ZgL2w-G0ijsyhXwczj0BeAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Lis Szary">
+
+      <div class="card-content">
+        <h2>Lis Szary</h2>
+
+        <p>
+          Występuje głównie w Ameryce Północnej.
+          Potrafi wspinać się na drzewa.
+        </p>
+
+        <a 
+          class="wiki-btn"
+          href="https://pl.wikipedia.org/wiki/Lis_szary"
+          target="_blank"
+        >
+          Wikipedia
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 | Strona o lisach 🦊</p>
+  </footer>
+
+</body>
+</html>
